@@ -1,0 +1,124 @@
+@mixin main-padding {
+  position: relative;
+  padding: {
+    bottom: $min-card-padding;
+    top: $min-card-padding;
+  }
+}
+@mixin main-title {
+  position: relative;
+  margin: 0 auto 30px;
+  padding: 10px 20px;
+  font-size: 30px;
+  width: fit-content;
+  z-index: 1;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    margin: auto;
+    height: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3px;
+    background-color: $main-color;
+  }
+}
+@mixin flowItem {
+  position: absolute;
+  font-size: 10px;
+  top: 20px;
+  color: white;
+  right: 15px;
+  padding: 5px 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family: system-ui;
+}
+@mixin fixed-button {
+  position: fixed;
+  transition: $main-transition;
+  top: 37%;
+  right: -5px;
+  transform: translateY(-37%);
+  z-index: 99;
+  padding: 12px 13px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: #f79427;
+  box-shadow: -6px 0px 6px 0px #6e6e6e57;
+  a {
+    color: white;
+  }
+  ul {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    left: 80px;
+    width: 290px;
+    padding: 15px 30px;
+    text-align: start;
+    box-shadow: #0000004d -4px 6px 15px 4px;
+
+    li {
+      padding: 10px 0;
+    }
+    .btn {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 7px 0;
+      button {
+        transition: $main-transition;
+        border: none;
+        outline: none;
+        padding: 15px 10px;
+        width: 100%;
+        border-radius: 40px;
+        background-color: $alt-color;
+        color: white;
+        cursor: pointer;
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}
+@mixin btnstyle {
+  border: none;
+  margin: auto;
+  margin-top: 29px;
+  cursor: pointer;
+  background: $alt-color;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: 'cairo';
+  overflow: hidden;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.5s;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $main-color;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+  }
+  &:hover {
+    &:before {
+      transform: scaleX(1);
+      transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    }
+  }
+}

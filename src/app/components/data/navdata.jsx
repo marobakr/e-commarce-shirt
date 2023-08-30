@@ -1,0 +1,30 @@
+export const BestChild = [
+  {
+    id: 1,
+    titleBt: 'shop kids',
+    img: 'https://wpthemesgrid.com/themes/free/eshop/images/mega-menu1.jpg',
+    info_0: 'kids toys',
+    info_1: 'Kids Travel Car',
+    info_1: 'Kids Travel Car',
+    info_2: 'Kids Color Shape',
+    info_3: 'Kids Tent',
+  },
+  {
+    id: 2,
+    titleBt: 'shop mens',
+    img: '	https://wpthemesgrid.com/themes/free/eshop/images/mega-menu2.jpg',
+    info_0: 'wathc ',
+    info_1: 't-shirt',
+    info_2: 'hoodies',
+    info_3: 'formal pant',
+  },
+  {
+    id: 3,
+    titleBt: 'shop womens',
+    img: '	https://wpthemesgrid.com/themes/free/eshop/images/mega-menu3.jpg',
+    info_0: 'ladies shirt',
+    info_1: 'ladies frog',
+    info_2: 'ladies sun glass',
+    info_3: 'ladies watch',
+  },
+]

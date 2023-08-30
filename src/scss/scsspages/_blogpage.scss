@@ -1,0 +1,409 @@
+//  if go to blog page the style was none
+.blog-style {
+  display: none;
+}
+.blog_section {
+  @include main-padding;
+  .container {
+    @media (max-width: 450px) {
+      grid-template-columns: repeat(auto-fill, minmax(306px, 1fr));
+      padding: 0 5px;
+    }
+    @extend %container-drid-display;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+    .col_I {
+      .img {
+        img {
+          max-width: 100%;
+        }
+      }
+      .info {
+        padding: 10px 0;
+        border-bottom: 1px solid #bdbdbd;
+
+        h2 {
+          color: #424646;
+        }
+        .icnos {
+          display: flex;
+          gap: 10px;
+          align-items: flex-start;
+          color: #424646;
+          font-size: 15px;
+          span {
+            border-right: 1px solid #bdbdbd;
+            padding-right: 5px;
+          }
+          svg {
+            color: $main-color;
+          }
+        }
+      }
+      .description {
+        padding: 20px 0;
+        //  if you wanna to acsess of elemnts when use map function ..
+        // اعتبر ان كلاسس البوكس ده البارينت وانتا بتنقي من جواه الابناء ...مع ان كلاسس البوكس تشايلد لل ديكربيبشن بس في الماب التشيلد هوه البارينت
+        /* amagin that class box be parent and you filtter from it Besides class box been child to description but when use map the child be parent */
+        .box {
+          @media (max-width: 450px) {
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+          &:nth-child(2) {
+            position: relative;
+            background-color: #f6f6f6;
+            color: #555;
+            padding-left: 50px;
+            border-left: 3px solid #f79427;
+            &::before {
+              position: relative;
+              background-color: #f6f6f6;
+              color: #555;
+              padding-left: 40px;
+              border-left: 3px solid #f79427;
+            }
+            &:after {
+              position: absolute;
+              content: '\f10d';
+              font-weight: 900;
+              font-family: 'Font Awesome 5 Free';
+              margin-right: 10px;
+              left: 12.5px;
+              top: 25px;
+              color: $main-color;
+              font-size: 25px;
+            }
+          }
+          padding: 15px 0;
+          padding: 15px 0;
+          color: #757575;
+          letter-spacing: 1px;
+          font-size: 14px;
+          line-height: 1.5;
+          font-family: inherit;
+        }
+      }
+      .ourtags {
+        @media (max-width: 450px) {
+          gap: 10px;
+          align-items: flex-start;
+        }
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        .child {
+          @media (max-width: 450px) {
+            flex-wrap: wrap;
+            padding-top: 20px;
+          }
+          display: flex;
+          gap: 12px;
+          p {
+            background-color: #eee;
+            padding: 5px 20px;
+            cursor: pointer;
+            color: #333;
+            margin: 0;
+            transition: $main-transition;
+            &:hover {
+              color: white;
+              background-color: $main-color;
+            }
+          }
+        }
+      }
+      .ourcomments {
+        .single_comment_section {
+          .box {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            padding-bottom: 15px;
+            &:nth-child(2) {
+              padding-left: 60px;
+            }
+            .img {
+              width: 40%;
+            }
+            .information_usr {
+              .user_data {
+                padding: 10px 0;
+                p {
+                  &:first-child {
+                    padding-bottom: 6px;
+                  }
+                  &:last-child {
+                    color: $pragrph_color;
+                  }
+                  margin: 0;
+                }
+              }
+              .user_info {
+                color: #424646;
+                line-height: 1.5;
+                font-size: 15px;
+                font-family: system-ui;
+                p {
+                  cursor: pointer;
+                  transition: $main-transition;
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  &:hover {
+                    color: $main-color;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .form_valid {
+        label {
+          span {
+            color: red;
+          }
+        }
+        img {
+          max-width: 100%;
+        }
+        ul {
+          padding-left: 0;
+          margin-bottom: 0;
+        }
+        a:hover {
+          text-decoration: none;
+        }
+        :focus {
+          outline: none;
+        }
+        .inner {
+          margin: auto;
+          padding-top: 68px;
+          padding-bottom: 48px;
+          .form-group {
+            display: flex;
+            .form-wrapper {
+              width: 100%;
+            }
+          }
+          .form-wrapper {
+            margin-bottom: 17px;
+            label {
+              margin-bottom: 9px;
+              display: block;
+            }
+          }
+          .form-control {
+            border: 1px solid #42464626;
+            display: block;
+            width: 100%;
+            height: 40px;
+            padding: 0 20px;
+            font-family: 'Muli-Bold';
+            background: none;
+            &:focus {
+              border: 1px solid $main-color;
+            }
+          }
+          select {
+            -moz-appearance: none;
+            cursor: pointer;
+            padding-left: 20px;
+            option[value=''][disabled] {
+              display: none;
+            }
+          }
+          button {
+            @include btnstyle;
+            padding: 15px 20px;
+            &:hover {
+              color: white;
+            }
+          }
+          .checkbox {
+            position: relative;
+            label {
+              padding-left: 22px;
+              cursor: pointer;
+            }
+            input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+            }
+            input:checked ~ .checkmark:after {
+              display: block;
+            }
+          }
+        }
+
+        @media (max-width: 991px) {
+          .inner {
+            min-width: 768px;
+          }
+        }
+        @media (max-width: 767px) {
+          .inner {
+            min-width: auto;
+            background: none;
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+          form {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+          }
+        }
+        .textarea {
+          height: 200px !important;
+        }
+      }
+    }
+    .col_II {
+      padding: 30px;
+      .main_sidebar {
+        padding: 15px 0;
+        .search_input_sidbar {
+          padding: 10px 0;
+          display: flex;
+          input {
+            width: 85%;
+            padding: 15px 15px;
+            border: 1px solid #eee;
+            &:focus {
+              border-color: $alt-color;
+            }
+          }
+          svg {
+            height: 50px;
+            width: 60px;
+            background-color: $alt-color;
+            padding: 10px;
+            color: white;
+            transition: $main-transition;
+            cursor: pointer;
+            &:hover {
+              background-color: $main-color;
+            }
+          }
+        }
+        .title_sidbar {
+          padding: 20px 0;
+          p {
+            transition: $main-transition;
+            color: $alt-color;
+            &:hover {
+              padding-left: 5px;
+              color: $main-color;
+            }
+          }
+        }
+        .img_said_bar {
+          padding: 20px 0;
+          .box_saidbar {
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            .card_info {
+              display: flex;
+              @media (max-width: 450px) {
+                flex-wrap: wrap;
+              }
+              gap: 15px;
+              img {
+                max-width: 20%;
+              }
+              display: flex;
+              h4 {
+                color: $alt-color;
+              }
+              .new_date {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                p {
+                  display: flex;
+                  gap: 10px;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                  color: #7a7575;
+                }
+                p,
+                h4 {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+      .tags_sidbar {
+        padding: 20px 0;
+        .website {
+          @media (max-width: 450px) {
+            flex-wrap: wrap;
+          }
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          padding: 20px 0;
+          p {
+            @include btnstyle;
+            &::before {
+              background: $alt-color;
+            }
+            &:hover {
+              color: white;
+            }
+            transition: $main-transition;
+            font-family: system-ui;
+            margin: 0;
+            background-color: #eee;
+            padding: 10px;
+          }
+        }
+      }
+      .newslatter {
+        padding: 20px 0;
+        .card {
+          @media (max-width: 500px) {
+            width: 100%;
+          }
+          width: 60%;
+          margin: auto;
+          padding: 20px 10px;
+          box-shadow: 0px 0px 12px #00000014;
+          h4 {
+            margin: 0;
+            padding-bottom: 15px;
+          }
+          .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input:first-child {
+              padding-left: 5px;
+              border: 1px solid #bdbdbd;
+            }
+            input:last-child {
+              background-color: $main-color;
+              border: none;
+              outline: none;
+              color: white;
+              transition: $main-transition;
+              &:hover {
+                background-color: $alt-color;
+              }
+            }
+            input {
+              padding: 15px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,359 @@
+/* Start Middle-inner */
+svg {
+  cursor: pointer;
+  transition: $main-transition;
+}
+.middle-inner {
+  scroll-behavior: smooth;
+
+  padding : {
+    top: 20px;
+    bottom: 20px;
+  }
+  .state-bars {
+    transition: all 1s ease;
+    @media (max-width: 750px) {
+      display: block;
+      padding: 20px 0;
+    }
+    .stateBarsIcons {
+      padding: 0 10px;
+      @media (max-width: 750px) {
+        display: flex;
+      }
+      .parent_links {
+        display: flex;
+        gap: 10px;
+      }
+      img {
+        padding-left: 15px;
+      }
+      svg {
+        &:hover {
+          color: $main-color;
+        }
+      }
+      display: none;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      i {
+        cursor: pointer;
+        &:last-child {
+          font-size: 20px;
+          padding-right: 10px;
+        }
+      }
+    }
+    .parent_search {
+      position: relative;
+      .mainSerch {
+        z-index: 1;
+        position: absolute;
+        right: 0px;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 15px;
+        .child {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          box-shadow: 0px 3px 6px -1px #ccc;
+          input {
+            outline: none;
+            border: none;
+            height: 40px;
+            padding: 0 0 0 10px;
+            border-right: 1px solid #ccc;
+          }
+          i {
+            padding: 11px 13px;
+            background-color: white;
+            color: #333;
+            transition: $main-transition;
+            &:hover {
+              background-color: $main-color;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+    nav {
+      @media (max-width: 750px) {
+        display: block;
+      }
+      display: none;
+      > ul {
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        // display: none;
+        padding: 5px 15px;
+        background-color: white;
+        li {
+          padding: 7px 0;
+          font-weight: 500;
+          a {
+            color: $alt-color;
+            transition: $main-transition;
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+        li.shop,
+        li.blog {
+          transition: all 0.3s ease-in-out;
+          position: relative;
+          background-color: white;
+          svg {
+            font-size: 20px;
+            padding: 0 5px;
+            position: relative;
+            color: $main-color;
+          }
+          ul {
+            margin-top: 5px;
+            box-shadow: 1px 5px 5px -3px #6e6e6e57;
+            padding: 5px 0;
+            li {
+              padding: 5px 15px;
+            }
+          }
+          .parent-li {
+            display: flex;
+            align-items: stretch;
+            .angle {
+              transition: all 0.3s ease;
+            }
+            .angleactive {
+              // transition: all 1s ease;
+              transform: rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      @media (max-width: 750px) {
+        display: none;
+      }
+      font-size: 15px;
+    }
+    .form {
+      @media (max-width: 750px) {
+        display: none;
+      }
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border: none;
+      outline: none;
+      border-radius: 0 5px 5px 0;
+
+      .menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 92%;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        border: 1px solid $borde-color;
+        i.fa-angle-down {
+          transform: rotate(-90deg);
+          transition: $main-transition - 0.2s linear;
+          transform-origin: center;
+          padding : {
+            top: 4px;
+          }
+        }
+        .rotate {
+          transform: rotate(180deg);
+        }
+        .megamenu {
+          display: none;
+          position: absolute;
+          width: 100%;
+          bottom: -160px;
+          background-color: #ffffff;
+          border: 1px solid $borde-color;
+          left: 0;
+          z-index: 9;
+          li {
+            padding: 10px;
+            transition: $main-transition;
+            &:hover {
+              background-color: $main-color;
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+      .search {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        button {
+          padding: 0 25px;
+          height: 48px;
+          background-color: $alt-color;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transition: $main-transition;
+          border-radius: 0 5px 5px 0;
+
+          &:hover {
+            background-color: $main-color;
+          }
+        }
+        i {
+          color: #fff;
+        }
+      }
+      input {
+        height: 48px;
+        outline: none;
+        border : {
+          top: 1px;
+          bottom: 1px;
+          color: $borde-color;
+          style: solid;
+        }
+        border-left: none;
+        border-right: none;
+      }
+    }
+    .icons {
+      @media (max-width: 750px) {
+        display: none;
+      }
+      display: flex;
+      i {
+        position: relative;
+        padding: 15px;
+        transition: $main-transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      //! موقتا لحد مع اعملها دينمك
+      // .backpack {
+      //   &::after {
+      //     position: absolute;
+      //     content: '2';
+      //     padding: 0px 5px;
+      //     background-color: #f79427;
+      //     border-radius: 50%;
+      //     text-align: center;
+      //     color: white;
+      //     font-size: 15px;
+      //     left: 30px;
+      //     top: 5px;
+      //   }
+      // }
+    }
+    .box-card-relative {
+      position: relative;
+      left: 90px;
+      top: 10px;
+      .card {
+        transition: all 0.3s ease-out;
+        padding: 15px 15px;
+        box-shadow: 2px 0px 6px 0px #6e6e6e57;
+        position: absolute;
+        z-index: 5;
+        width: 300px;
+        background-color: white;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight: 600;
+        top: 120px;
+        right: 130px;
+
+        .title {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #ccc;
+          font-size: 15px;
+          font-weight: 600;
+        }
+        .box {
+          display: flex;
+          padding: 10px 0;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 10px;
+          .info {
+            display: flex;
+            flex-direction: column;
+            .price {
+              margin: 5px 0 10px;
+              color: #757575;
+              font-size: 13px;
+              font-family: 'Cairo';
+              font-weight: 500;
+            }
+            .label {
+              color: $alt-color;
+              margin: 10px 0 0;
+            }
+            button {
+              transition: $main-transition;
+              width: fit-content;
+              background-color: white;
+              border: 1px solid #ccc;
+              text-align: center;
+              font-size: 13px;
+              font-weight: bold;
+              font-family: 'Cairo';
+              &:hover {
+                background-color: $alt-color;
+                color: white;
+              }
+            }
+          }
+          .img {
+            img {
+              border: 1px solid #ccc;
+            }
+          }
+        }
+        .footer-box {
+          display: flex;
+          flex-direction: column;
+          .footer-info {
+            display: flex;
+            justify-content: space-between;
+          }
+          button {
+            background-color: $alt-color;
+            transition: $main-transition;
+            border: none;
+            width: 100%;
+            padding: 10px 0;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+              background-color: $main-color;
+            }
+          }
+        }
+        &:hover {
+          transform: translateY(-23px);
+        }
+      }
+    }
+  }
+}
+/* End Middle-inner */

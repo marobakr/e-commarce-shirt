@@ -1,0 +1,99 @@
+.footer {
+  color: white;
+  @include main-padding;
+  background-color: #222222;
+  padding-bottom: 0px;
+  > .container {
+    padding-bottom: 100px;
+    @extend %container-drid-display;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    @media (max-width: 500px) {
+      text-align: center;
+    }
+    .box {
+      width: 100%;
+      p {
+        transition: all 0.4s ease;
+
+        a {
+          color: #fff;
+          text-transform: lowercase;
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+    .animation {
+      p {
+        transition: all 0.4s ease;
+        position: relative;
+
+        &:hover {
+          padding-left: 10px;
+          color: $main-color;
+        }
+      }
+      .icons {
+        display: flex;
+        gap: 12px;
+        @media (max-width: 500px) {
+          justify-content: center;
+          align-items: center;
+        }
+        i {
+          transition: $main-transition;
+          &:hover {
+            color: $main-color;
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+    flex-wrap .box {
+      color: white;
+      .img {
+        color: white;
+      }
+      .number {
+        span {
+          color: $main-color;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .copyright {
+    .container {
+      .card {
+        border-top: 1px solid $alt-color;
+        padding-bottom: 20px;
+        @media (max-width: 677px) {
+          justify-content: space-around;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        p {
+          display: flex;
+          color: white;
+          align-content: center;
+          gap: 10px;
+          @media (max-width: 480px) {
+            flex-wrap: wrap;
+            justify-content: center;
+          }
+          i {
+            transition: $main-transition;
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

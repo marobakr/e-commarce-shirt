@@ -1,0 +1,25 @@
+/* Our Helpers  */
+@import '../helpers/variabules';
+@import '../helpers/grid';
+@import '../helpers/mixen';
+@import '../helpers/globalrules';
+
+// /* Styled of pages */
+@import './scsspages/headr';
+@import './scsspages/middle';
+@import './scsspages/navbar';
+// home page
+@import './scsspages/slider';
+@import './scsspages/small-banner';
+@import './scsspages/trending';
+@import './scsspages/title';
+@import './scsspages/shop-lest';
+@import './scsspages/blog';
+@import './scsspages/services';
+@import './scsspages/footer';
+// blog page
+@import './scsspages/blogpage';
+// checkout page
+@import './scsspages/form';
+// cart page
+@import './scsspages/cart';
