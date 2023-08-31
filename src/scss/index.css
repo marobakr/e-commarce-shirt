@@ -430,13 +430,16 @@ svg {
   font-weight: 500;
 }
 
-.middle-inner .state-bars nav > ul li a {
+.middle-inner .state-bars nav > ul li a,
+.middle-inner .state-bars nav > ul li div {
+  cursor: pointer;
   color: #333;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.middle-inner .state-bars nav > ul li a:hover {
+.middle-inner .state-bars nav > ul li a:hover,
+.middle-inner .state-bars nav > ul li div:hover {
   color: #f7941d;
 }
 

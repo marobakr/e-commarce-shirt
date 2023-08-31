@@ -94,7 +94,9 @@ svg {
         li {
           padding: 7px 0;
           font-weight: 500;
-          a {
+          a,
+          div {
+            cursor: pointer;
             color: $alt-color;
             transition: $main-transition;
             &:hover {

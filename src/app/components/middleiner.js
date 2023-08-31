@@ -49,28 +49,28 @@ const ItemLinks = () => {
           <Link href='#service'>service</Link>
         </li>
         <li className='shop'>
-          <Link href='/' onClick={() => hiddinShop(!showShop)} className='shop'>
+          <div onClick={() => hiddinShop(!showShop)} className='shop'>
             <div className='parent-li'>
-              <div>shop</div>
+              <div className='title'>shop</div>
               <i className={`angle ${showShop ? 'angleactive' : false}`}>
                 <ChevronRightSharpIcon />
               </i>
             </div>
-          </Link>
+          </div>
           {showShop && <ShowNavShop />}
         </li>
         <li>
           <Link href='/'>pages</Link>
         </li>
         <li className='blog'>
-          <Link href='/' onClick={() => hiddinBlog(!showBlog)} className='blog'>
+          <div onClick={() => hiddinBlog(!showBlog)} className='blog'>
             <div className='parent-li'>
               <div>blog</div>
               <i className={`angle ${showBlog ? 'angleactive' : false}`}>
                 <ChevronRightSharpIcon />
               </i>
             </div>
-          </Link>
+          </div>
           {showBlog && <ShowNavBLog />}
         </li>
         <li>
