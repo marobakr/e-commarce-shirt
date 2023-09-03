@@ -1,0 +1,23 @@
+.parent {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #eee;
+  .container {
+    .child {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      .frist_link {
+        color: #333;
+        transition: $main-transition;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      .last_link {
+        color: $main-color;
+        pointer-events: none;
+      }
+    }
+  }
+}

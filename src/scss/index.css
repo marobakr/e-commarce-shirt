@@ -2171,6 +2171,37 @@ nav .container .alllinks .links > ul li ul.flow li:hover a {
   color: #f7941d;
 }
 
+.parent {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #eee;
+}
+
+.parent .container .child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.parent .container .child .frist_link {
+  color: #333;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.parent .container .child .frist_link:hover {
+  color: #f7941d;
+}
+
+.parent .container .child .last_link {
+  color: #f7941d;
+  pointer-events: none;
+}
+
 .blog-style {
   display: none;
 }
